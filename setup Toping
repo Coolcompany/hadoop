@@ -1,0 +1,12 @@
+#Update and Upgrade
+sudo apt-get update
+sudo apt-get upgrade
+
+## Load Mysql Server
+sudo apt-get install mysql-server
+wget http://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-5.0.8.tar.gz
+tar -xvf apache-2.1.1-bin.tar.gz
+
+##Load and hive
+wget http://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-5.0.8.tar.gz
+tar -xvf mysql-connector-java-5.0.8-bin.tar.gz
