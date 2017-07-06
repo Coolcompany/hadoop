@@ -71,6 +71,9 @@ cd /usr/local/hive/conf
            email VARCHAR(50),
             reg_date TIMESTAMP);
      SHOW TABLE
+     
+     -----------------------
+     start
     
         
  
