@@ -73,7 +73,12 @@ cd /usr/local/hive/conf
      SHOW TABLE
      
      -----------------------
-     start
+     All Step
+     sudo apt-get install mysql-server
+     sudo apt-get install libmysql-java
+     start-all.sh(start-dfs.sh,start-yarn.sh)
+     hive--service matastore_db&
+     hive|| hive --service hiveserver2&
     
         
  
