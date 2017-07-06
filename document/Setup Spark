@@ -1,1 +1,6 @@
+Stop-all.sh  //close terminal.
 
+Start-all.sh hive
+hive||-hive--service hiveserver2&
+beeline  //display beeline version is ok
+!connect jdbc:hive2://
