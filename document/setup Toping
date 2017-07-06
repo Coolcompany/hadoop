@@ -4,9 +4,50 @@ sudo apt-get upgrade
 
 ## Load Mysql Server
 sudo apt-get install mysql-server
+root  12345
+test mysql:
+   mysql -u root -p
+
+
+## load java
 wget http://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-5.0.8.tar.gz
 tar -xvf apache-2.1.1-bin.tar.gz
 
 ##Load and hive
 wget http://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-5.0.8.tar.gz
 tar -xvf mysql-connector-java-5.0.8-bin.tar.gz
+
+## make Hive folder
+1. copy install to  /usr/local/hive
+   sudo cp -r ./apache-hive-2.1.1-bin /usr/local/hive
+ 
+2. copy mysql-connector-java-5.0.8-bin.jar to  /usr/local/hive/lib
+3. create directory mkdir /var/hive/tmp
+
+## Create DB and TAble
+CREATE database metastore_db;
+CREATE USER 'APP'@'localhost' IDENTIFIED BY 'mine';
+GRANT ALL PRIVILEGES ON*.*TO 'APP'@'localhost';
+FLUSH PRIVILEGES;
+
+## Edit .basdrc to Hive with Hadoop
+nano .bashrc
+
+export HIVE_HOME=/usr/local/hive
+export PATH=$PATH:/usr/local/hive/bin
+exit 
+-- refesh source~/.bashrc 
+
+
+##` Crete hive-env.sh --form hive-env(template) in /usr/local/hive/conf
+edit add 1 line at end
+      export HADOOP_HOME=/usr/local/hadoop
+
+
+
+##
+hdfs dfs -mkdir /tmp
+hdfs dfs -mkdir /user/hive/
+hdfs dfs -mkdir /user/hive/warehouse
+hdfs dfs -chmod g+w /user/hive/warehouse
+hdfs dfs -chmod g+w /tmp
