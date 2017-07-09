@@ -1,0 +1,9 @@
+start-all.sh
+hadoop namenode
+hadoop datanoode
+------
+hdfs dfs -ls /    'list file in root directory'
+hdfs dfs -mkdir /input
+hdfs dfs -mkdir /output   'create dirctory for input file'
+hdfs dfs -put /home/user01/sales_data_jan2009.csv /input 'input file to input dir'
+hdfs dfs -get /home/user01/sales_data_jan2009.csv /input 'input file to input dir'
